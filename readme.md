@@ -2,6 +2,9 @@
 ##Pinned
 A jQuery plugin for creating "pinned" or sticky elements on a page.
 
+##Example & Project page
+http://drewdahlman.github.com/Pinned/
+
 ##Features
 Quickly create pinned elements on page, also support mobile devices such as mobile safari.
 
@@ -18,8 +21,8 @@ $("#element").pinned({
 If you wish you can have callbacks in your code for when your element becomes pinned and unpinned.
 <pre>
 $("#element").pinned({
-	bounds: '100px', // when to become sticky
-	scrolling: '0px', // position during scroll
+	bounds: 100, // when to become sticky
+	scrolling: 0, // position during scroll
 	mobile: false // should support mobile 
 },function(){
 	// PINNED
