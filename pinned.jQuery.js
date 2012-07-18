@@ -32,7 +32,7 @@
 			var pinnedTimeout = 0;
 
 			function init(){
-				if(isMobile() && setings.mobile == false || !isMobile() ){
+				if(isMobile() && settings.mobile == false || !isMobile() ){
 					windowScroll();
 				}
 				else{
