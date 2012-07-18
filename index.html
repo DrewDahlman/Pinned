@@ -72,12 +72,7 @@ function(){
 
 <h2>Methods</h2>
 
-<p><code>$("#element").pinned();</code>
-<code>$("#element").unpin()</code></p>
-
-<h2>Unpin</h2>
-
-<p>Disables the pinned element.</p>
+<p><code>$("#element").pinned();</code></p>
 
 <h2>CSS</h2>
 
@@ -89,10 +84,6 @@ function(){
 </pre>
 
 <p>To use Pinned call the plugin by feeding your element selector, either ID or class, be sure to set your sticky element to position absolute!</p>
-
-<h2>Notes</h2>
-
-<p>This plugin uses $(window).scroll() and calling unpin will unbind any scroll events that are current bound. Beware when using <code>$(window).bind('scroll');</code></p>
         </section>
       </section>
       <footer>
@@ -105,15 +96,23 @@ function(){
     <!-- PINNED SCRIPT -->
     <script>
     $(function(){
-      console.log('hello')
+
+      // BASIC SET UP OF THE PAGE
+      var $width = $("#content").width();
+      $("#header").width($width);
+
+      // PINNED
       $("#header").pinned({
         bounds: 92,
-        scrolling:0
+        scrolling:0,
+        mobile: true
       },function(){
-        $("#header img").css({'width':'200px'});
+        $("#header img").css({'width':'50%'});
       },function(){
-        $("#header img").css({'width':'500px'});
+        $("#header img").css({'width':'100%'});
       });
+
+
     });
     </script>
   </body>

@@ -84,8 +84,5 @@
 			init();
     });
 	};
-	$.fn.unpin = function(){
-		$this.data('pinned',false);
-	}
 
 })(jQuery);
