@@ -1,7 +1,7 @@
 /*
 	Plugin: Pinned
 	Author: Drew Dahlman ( www.drewdahlman.com )
-	Version: 1.0
+	Version: 0.0.2
 */
 
 (function($) {
@@ -27,6 +27,8 @@
 
 			var $this = $(this);
 			var orig = $this.css('top');
+			$this.data('pinned',true);
+
 			var pinnedTimeout = 0;
 
 			function init(){
@@ -39,34 +41,36 @@
 			}
 
 			windowScroll = function(){
-				$(window).bind('scroll',function(){
-					if ($(window).scrollTop() > settings.bounds && $this.css('position') != 'fixed' ){ 
-						$this.css({'position': 'fixed', 'top': settings.scrolling});
-						if(callbacks.pinning != null){
-							callbacks.pinning();
+				if($this.data('pinned'))
+					$(window).scroll(function(){
+						if ($(window).scrollTop() > settings.bounds && $this.css('position') != 'fixed' ){ 
+							$this.css({'position': 'fixed', 'top': settings.scrolling});
+							if(callbacks.pinning != null){
+								callbacks.pinning();
+							}
+						} 
+						if ($(window).scrollTop() < settings.bounds && $this.css('position') != 'absolute'){ 
+							$this.css({'position': 'absolute', 'top': orig}); 
+							if(callbacks.unpinned != null){
+								callbacks.unpinned();
+							}
 						}
-					} 
-					if ($(window).scrollTop() < settings.bounds && $this.css('position') != 'absolute'){ 
-						$this.css({'position': 'absolute', 'top': orig}); 
-						if(callbacks.unpinned != null){
-							callbacks.unpinned();
-						}
-					}
-				});
+					});
 			}
 
 			// TODO - Add better support for mobile devices on scroll
 			mobileScroll = function(){
-				$(window).bind('touchmove',function(){
-					if ($(window).scrollTop() > settings.bounds && $this.css('position') != 'fixed' ){ 
-						$this.css({'position': 'fixed', 'top': settings.scrolling});
-						
-					} 
-					if ($(window).scrollTop() < settings.bounds && $this.css('position') != 'absolute'){ 
-						$this.css({'position': 'absolute', 'top': orig}); 
-						
-					}
-				});
+				if($this.data('pinned',true))
+					$(window).bind('touchmove',function(){
+						if ($(window).scrollTop() > settings.bounds && $this.css('position') != 'fixed' ){ 
+							$this.css({'position': 'fixed', 'top': settings.scrolling});
+							
+						} 
+						if ($(window).scrollTop() < settings.bounds && $this.css('position') != 'absolute'){ 
+							$this.css({'position': 'absolute', 'top': orig}); 
+							
+						}
+					});
 			}
 
 			isMobile = function(){
@@ -81,8 +85,7 @@
     });
 	};
 	$.fn.unpin = function(){
-		$(window).unbind('scroll');
-		$(window).unbind('touchmove');
+		$this.data('pinned',false);
 	}
 
 })(jQuery);
