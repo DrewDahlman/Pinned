@@ -14,6 +14,25 @@ $("#element").pinned({
 });
 </pre>
 
+##Callbacks
+If you wish you can have callbacks in your code for when your element becomes pinned and unpinned.
+<pre>
+$("#element").pinned({
+	bounds: '100px', // when to become sticky
+	scrolling: '0px', // position during scroll
+	mobile: false // should support mobile 
+},function(){
+	// PINNED
+},
+function(){
+	// UNPINNED
+});
+</pre>
+
+##Methods
+`$.pinned();`
+`#.unpin()`
+
 ##CSS
 <pre>
 #element {
