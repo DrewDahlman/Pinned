@@ -1,0 +1,22 @@
+#header {
+	background-color: #fff;
+	position: absolute;
+	top: 92px;
+	z-index: 10;
+	width: 500px;
+	border-bottom: 1px solid #eaeaea;
+}
+#header img {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 500px;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-ms-transition: all 1s;
+	-o-transition: all 1s;
+}
+
+#content {
+	position: relative;
+	top: 310px;
+}

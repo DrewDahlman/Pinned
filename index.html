@@ -6,8 +6,13 @@
     <title>Pinned by DrewDahlman</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pinned_css.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <script src="javascripts/jQuery.js"></script>
+    <script src="javascripts/pinned.jQuery.js"></script>
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -28,8 +33,8 @@
         </ul>
       </header>
       <section>
-        <p><img src="http://www.drewdahlman.com/portfolio/wp-content/uploads/2012/07/pinned1.png"></p>
-
+        <div id='header'><img src="http://www.drewdahlman.com/portfolio/wp-content/uploads/2012/07/pinned1.png"></div>
+<section id='content'>
 <h2>Pinned</h2>
 
 <p>A jQuery plugin for creating "pinned" or sticky elements on a page.</p>
@@ -42,8 +47,8 @@
 
 <pre>
 $("#element").pinned({
-    bounds: '100px', // when to become sticky
-    scrolling: '0px', // position during scroll
+    bounds: 100, // when to become sticky
+    scrolling: 0, // position during scroll
     mobile: false // should support mobile 
 });
 </pre>
@@ -54,8 +59,8 @@ $("#element").pinned({
 
 <pre>
 $("#element").pinned({
-    bounds: '100px', // when to become sticky
-    scrolling: '0px', // position during scroll
+    bounds: 100, // when to become sticky
+    scrolling: 0, // position during scroll
     mobile: false // should support mobile 
 },function(){
     // PINNED
@@ -88,6 +93,7 @@ function(){
 <h2>Notes</h2>
 
 <p>This plugin uses $(window).scroll() and calling unpin will unbind any scroll events that are current bound. Beware when using <code>$(window).bind('scroll');</code></p>
+        </section>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/DrewDahlman">DrewDahlman</a></p>
@@ -96,5 +102,19 @@ function(){
     </div>
     <script src="javascripts/scale.fix.js"></script>
     
+    <!-- PINNED SCRIPT -->
+    <script>
+    $(function(){
+      console.log('hello')
+      $("#header").pinned({
+        bounds: 92,
+        scrolling:0
+      },function(){
+        $("#header img").css({'width':'200px'});
+      },function(){
+        $("#header img").css({'width':'500px'});
+      });
+    });
+    </script>
   </body>
 </html>
