@@ -84,6 +84,7 @@
 	};
 	$.fn.unpin = function(){
 		$(window).unbind('scroll');
+		$(window).unbind('touchmove');
 	}
 
 })(jQuery);
