@@ -6,11 +6,11 @@ Quickly create pinned elements on page, also support mobile devices such as mobi
 
 ##Use
 <pre>
-	$("#element").pinned({
-		bounds: '100px',
-		scrolling: '110px',
-		mobile: false
-	});
+$("#element").pinned({
+	bounds: '100px',
+	scrolling: '110px',
+	mobile: false
+});
 </pre>
 
 To use Pinned call the plugin by feeding your element selector, either ID or class.
