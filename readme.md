@@ -8,7 +8,7 @@ Quickly create pinned elements on page, also support mobile devices such as mobi
 <pre>
 $("#element").pinned({
 	bounds: '100px', // when to become sticky
-	scrolling: '110px', // position during scroll
+	scrolling: '0px', // position during scroll
 	mobile: false // should support mobile 
 });
 </pre>
