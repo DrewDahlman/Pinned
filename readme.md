@@ -1,3 +1,4 @@
+<img src='http://www.drewdahlman.com/portfolio/wp-content/uploads/2012/07/pinned1.png'>
 ##Pinned
 A jQuery plugin for creating "pinned" or sticky elements on a page.
 
