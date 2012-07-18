@@ -34,10 +34,6 @@ function(){
 
 ##Methods
 `$("#element").pinned();`
-`$("#element").unpin()`
-
-##Unpin
-Disables the pinned element.
 
 ##CSS
 <pre>
@@ -48,9 +44,6 @@ Disables the pinned element.
 </pre>
 
 To use Pinned call the plugin by feeding your element selector, either ID or class, be sure to set your sticky element to position absolute!
-
-##Notes
-This plugin uses $(window).scroll() and calling unpin will unbind any scroll events that are current bound. Beware when using `$(window).bind('scroll');`
 
 ##TODO
 - Add better support for touch movements.
