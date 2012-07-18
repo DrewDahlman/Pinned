@@ -7,10 +7,18 @@ Quickly create pinned elements on page, also support mobile devices such as mobi
 ##Use
 <pre>
 $("#element").pinned({
-	bounds: '100px',
-	scrolling: '110px',
-	mobile: false
+	bounds: '100px', // when to become sticky
+	scrolling: '110px', // position during scroll
+	mobile: false // should support mobile 
 });
 </pre>
 
-To use Pinned call the plugin by feeding your element selector, either ID or class.
+##CSS
+<pre>
+#element {
+	position: absolute;
+	top: 100px;
+}
+</pre>
+
+To use Pinned call the plugin by feeding your element selector, either ID or class, be sure to set your sticky element to position absolute!
