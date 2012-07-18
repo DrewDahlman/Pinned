@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pinned by DrewDahlman</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Pinned</h1>
+        <p>A jQuery plugin for creating sticky elements</p>
+
+        <p class="view"><a href="https://github.com/DrewDahlman/Pinned">View the Project on GitHub <small>DrewDahlman/Pinned</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/DrewDahlman/Pinned/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/DrewDahlman/Pinned/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/DrewDahlman/Pinned">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><img src="http://www.drewdahlman.com/portfolio/wp-content/uploads/2012/07/pinned1.png"></p>
+
+<h2>Pinned</h2>
+
+<p>A jQuery plugin for creating "pinned" or sticky elements on a page.</p>
+
+<h2>Features</h2>
+
+<p>Quickly create pinned elements on page, also support mobile devices such as mobile safari.</p>
+
+<h2>Use</h2>
+
+<pre>
+$("#element").pinned({
+    bounds: '100px', // when to become sticky
+    scrolling: '0px', // position during scroll
+    mobile: false // should support mobile 
+});
+</pre>
+
+<h2>Callbacks</h2>
+
+<p>If you wish you can have callbacks in your code for when your element becomes pinned and unpinned.</p>
+
+<pre>
+$("#element").pinned({
+    bounds: '100px', // when to become sticky
+    scrolling: '0px', // position during scroll
+    mobile: false // should support mobile 
+},function(){
+    // PINNED
+},
+function(){
+    // UNPINNED
+});
+</pre>
+
+<h2>Methods</h2>
+
+<p><code>$("#element").pinned();</code>
+<code>$("#element").unpin()</code></p>
+
+<h2>Unpin</h2>
+
+<p>Disables the pinned element.</p>
+
+<h2>CSS</h2>
+
+<pre>
+#element {
+    position: absolute;
+    top: 100px;
+}
+</pre>
+
+<p>To use Pinned call the plugin by feeding your element selector, either ID or class, be sure to set your sticky element to position absolute!</p>
+
+<h2>Notes</h2>
+
+<p>This plugin uses $(window).scroll() and calling unpin will unbind any scroll events that are current bound. Beware when using <code>$(window).bind('scroll');</code></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/DrewDahlman">DrewDahlman</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
