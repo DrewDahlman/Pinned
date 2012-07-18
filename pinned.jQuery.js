@@ -31,11 +31,9 @@
 
 			function init(){
 				if(isMobile() && setings.mobile == false || !isMobile() ){
-					console.log('desktop only');
 					windowScroll();
 				}
 				else{
-					console.log('mobile only');
 					mobileScroll();
 				}
 			}
